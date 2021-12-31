@@ -1,11 +1,3 @@
-#include <stdio.h>
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "esp_system.h"
-
-////////
-
-//wifi
 #include "freertos/FreeRTOS.h"
 #include "freertos/event_groups.h"
 #include "esp_wifi.h"
@@ -132,12 +124,4 @@ void wifi_start(){
 
 	ESP_LOGI("", "ESP_WIFI_MODE_STA");
 	wifi_init();
-}
-////////////////////////////////
-
-
-void app_main(void)
-{
-	wifi_start();
-
 }

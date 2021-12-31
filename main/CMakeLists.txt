@@ -1,2 +1,6 @@
-idf_component_register(SRCS "hello_world_main.c"
-                    INCLUDE_DIRS "")
+set(COMPONENT_REQUIRES )
+set(COMPONENT_PRIV_REQUIRES )
+
+file(GLOB_RECURSE COMPONENT_SRCS "*.c")
+
+register_component()
