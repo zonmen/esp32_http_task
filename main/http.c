@@ -47,13 +47,14 @@ esp_err_t _http_event_handle(esp_http_client_event_t *evt)
 }
 
 
-void https_post_request(char* site, char* data)
+void post(char* url, char* data)
 {
     char local_response_buffer[1000] = {0};
+
 	esp_http_client_config_t config = {
         .event_handler = _http_event_handle,
         .user_data = local_response_buffer,
-		.url = site,
+		.url = url,
     };
 
 	esp_http_client_handle_t client = esp_http_client_init(&config);
@@ -67,18 +68,18 @@ void https_post_request(char* site, char* data)
 }
 
 
-void https_get_request(char* site)
+void get(char* url)
 {
 	 char local_response_buffer[1000] = {0};
 
 	    esp_http_client_config_t config = {
 	        .event_handler = _http_event_handle,
 	        .user_data = local_response_buffer,
-			.url = site,
+			.url = url,
 	    };
 	    esp_http_client_handle_t client = esp_http_client_init(&config);
+	    esp_http_client_perform(client);
 	    esp_http_client_get_status_code(client);
 	    esp_http_client_get_content_length(client);
-
-	    ESP_LOG_BUFFER_HEX("SERG", local_response_buffer, strlen(local_response_buffer));
+	    ESP_LOG_BUFFER_HEX("get request", local_response_buffer, strlen(local_response_buffer));
 }
