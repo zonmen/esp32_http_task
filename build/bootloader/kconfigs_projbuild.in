@@ -1,0 +1,3 @@
+source "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/bootloader/Kconfig.projbuild"
+source "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/esptool_py/Kconfig.projbuild"
+source "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/partition_table/Kconfig.projbuild"

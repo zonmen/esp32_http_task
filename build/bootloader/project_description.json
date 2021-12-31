@@ -1,0 +1,20 @@
+{
+    "project_name":       "bootloader",
+    "project_path":       "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/bootloader/subproject",
+    "build_dir":          "/home/prutek/programms/eclipse/eclipse-workspace/test/build/bootloader",
+    "config_file":        "/home/prutek/programms/eclipse/eclipse-workspace/test/sdkconfig",
+    "config_defaults":    "",
+    "app_elf":            "bootloader.elf",
+    "app_bin":            "bootloader.bin",
+    "git_revision":       "v4.3-dirty",
+    "target":             "esp32",
+    "phy_data_partition": "",
+    "monitor_baud" :      "115200",
+    "monitor_toolprefix": "xtensa-esp32-elf-",
+    "config_environment" : {
+        "COMPONENT_KCONFIGS" : "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/efuse/Kconfig;/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/esp32/Kconfig;/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/esp_common/Kconfig;/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/esp_system/Kconfig;/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/log/Kconfig;/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/newlib/Kconfig;/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/spi_flash/Kconfig",
+        "COMPONENT_KCONFIGS_PROJBUILD" : "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/bootloader/Kconfig.projbuild;/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/esptool_py/Kconfig.projbuild;/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/partition_table/Kconfig.projbuild"
+    },
+    "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp32", "esp_common", "esp_hw_support", "esp_rom", "esp_system", "esptool_py", "hal", "log", "main", "micro-ecc", "newlib", "partition_table", "soc", "spi_flash", "xtensa", "" ],
+    "build_component_paths" : [ "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/bootloader", "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/bootloader_support", "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/efuse", "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/esp32", "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/esp_common", "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/esp_hw_support", "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/esp_rom", "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/esp_system", "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/esptool_py", "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/hal", "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/log", "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/bootloader/subproject/main", "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/bootloader/subproject/components/micro-ecc", "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/newlib", "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/partition_table", "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/soc", "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/spi_flash", "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/xtensa", "" ]
+}

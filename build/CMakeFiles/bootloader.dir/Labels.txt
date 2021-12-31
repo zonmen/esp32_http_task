@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/prutek/programms/eclipse/eclipse-workspace/test/build/CMakeFiles/bootloader
+/home/prutek/programms/eclipse/eclipse-workspace/test/build/CMakeFiles/bootloader.rule
+/home/prutek/programms/eclipse/eclipse-workspace/test/build/CMakeFiles/bootloader-complete.rule
+/home/prutek/programms/eclipse/eclipse-workspace/test/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/prutek/programms/eclipse/eclipse-workspace/test/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/prutek/programms/eclipse/eclipse-workspace/test/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/prutek/programms/eclipse/eclipse-workspace/test/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
+/home/prutek/programms/eclipse/eclipse-workspace/test/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/prutek/programms/eclipse/eclipse-workspace/test/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/prutek/programms/eclipse/eclipse-workspace/test/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule

@@ -1,0 +1,7 @@
+source "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/efuse/Kconfig"
+source "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/esp32/Kconfig"
+source "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/esp_common/Kconfig"
+source "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/esp_system/Kconfig"
+source "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/log/Kconfig"
+source "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/newlib/Kconfig"
+source "/home/prutek/programms/eclipse/eclipse-workspace/_libs/esp-idf-v4.3/components/spi_flash/Kconfig"
