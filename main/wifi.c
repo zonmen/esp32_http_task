@@ -7,8 +7,8 @@
 #include "lwip/err.h"
 #include "lwip/sys.h"
 
-#define WIFI_SSID "Dom"
-#define WIFI_PASS "JJAD1991"
+#define WIFI_SSID "snark"
+#define WIFI_PASS "Snark7013061"
 #define EXAMPLE_ESP_MAXIMUM_RETRY  5
 
 #define WIFI_CONNECTED_BIT BIT0

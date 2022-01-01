@@ -13,71 +13,64 @@
 #include "http.c"
 #include "wifi.c"
 
-
-///////////////////////////////////
-
 #define BUF_SIZE (1024)
 
+//buffer to store line from console
 uint8_t buff[256];
-
-int flag_post = 0, flag_get = 0;
-
-
+//flags to send get/post request
+int  send_get_request = 0, send_post_request = 0;
+//Handle console input
 static void IRAM_ATTR uart_intr_handle(void *arg);
-
 //change baud_rate to 9600
 void uart_config();
-//get url and body from input line
-void get_words(char* url, char* body);
+//Get url from console line for get method
+void get_request_url(char *url);
+//Get url from console line for post method
+void post_request_url_body(char *url, char *body);
 
 
 
-//////////////////////////////////
+
 void app_main(void){
 	char url[100], body[100];
 
 	wifi_start();
 
 	uart_config();
-		while(1){
-			if(flag_post == 1 || flag_get == 1){
-				get_words(url, body);
-				if(flag_post == 1){
-					post(url, body);
-				} else{
-					get(url);
-				}
-				flag_post = flag_get = 0;
-				strcpy(url, "");
-				strcpy(body, "");
-			}
-
-			vTaskDelay( 100 / portTICK_PERIOD_MS);
+	while(1){
+		if(send_get_request == 1){
+			get_request_url(url);
+			get(url);
+			send_post_request = send_get_request = 0;
+		}else if(send_post_request == 1){
+			post_request_url_body(url, body);
+			post(url, body);
+			send_post_request = send_get_request = 0;
 		}
+		vTaskDelay( 100 / portTICK_PERIOD_MS);
+	}
 }
 
-
-void get_words(char* url, char* body){
+//////////////////////////////////////////////////
+void post_request_url_body(char *url, char *body){
 	int i, j;
-	j = (flag_post == 1) ? 10 : 9;
-	i = 0;
-	while( buff[j] != '\0' && buff[j] != ' '){
-	    url[i++] = buff[j++];
+	for(i = 10, j = 0; buff[i] != '\0' && buff[i] != ' '; i++, j++){
+		url[j] = buff[i];
 	}
+	url[j] = '\0';
+	i++;
+	for(j = 0; buff[i] != '\0' && buff[i] != '\n'; i++, j++){
+		body[j] = buff[i];
+	}
+	body[j] = '\0';
+}
 
-	url[i] = '\0';
-	if(flag_post == 1){
-	    i = 0;
-		j++;
-	   while( buff[j] != '\0' && buff[j] != ' '){
-		   if( buff[j] == '\n'){
-			   j++;
-			   continue;
-		   }
-	       body[i++] = buff[j++];
-	    }
-	    body[i] = '\0';
+void get_request_url(char *url){
+	int i, j;
+	for(i=9,j=0; buff[i] != '\0' && buff[i] != '\n'; i++, j++ ){
+		url[j] = buff[i];
 	}
+	url[j] = '\0';
 }
 
 void uart_config(){
@@ -113,10 +106,10 @@ static void IRAM_ATTR uart_intr_handle(void *arg)
 	uart_clear_intr_status(UART_NUM_0, UART_RXFIFO_FULL_INT_CLR|UART_RXFIFO_TOUT_INT_CLR);
 
 	if(buff[5] == (int)'G' && buff[6] == (int)'E' && buff[7] == (int)'T'){
-		flag_get = 1;
+		send_get_request = 1;
 	}else
 		if(buff[5] == (int)'P' && buff[6] == (int)'O' && buff[7] == (int)'S' && buff[8] == (int)'T'){
-			flag_post = 1;
+			send_post_request = 1;
 		}
 
 }
